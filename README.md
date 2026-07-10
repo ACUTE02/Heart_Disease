@@ -1,65 +1,63 @@
-# ❤️ Heart Disease Risk Prediction using Machine Learning
+# ❤️ Heart Disease Risk Prediction Web Application
 
-### End-to-End Machine Learning Pipeline with Future Streamlit Deployment
+> **An End-to-End Machine Learning & Streamlit Application for Predicting Heart Disease Risk**
 
 ![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-Machine%20Learning-orange?style=for-the-badge&logo=scikitlearn)
-![Pandas](https://img.shields.io/badge/Pandas-Data%20Analysis-150458?style=for-the-badge&logo=pandas&logoColor=white)
-![NumPy](https://img.shields.io/badge/NumPy-Numerical%20Computing-013243?style=for-the-badge&logo=numpy&logoColor=white)
-![Status](https://img.shields.io/badge/Status-Completed-success?style=for-the-badge)
+![Streamlit](https://img.shields.io/badge/Streamlit-Web%20App-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)
+![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-Machine%20Learning-F7931E?style=for-the-badge&logo=scikitlearn)
+![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)
+![NumPy](https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 
 ---
 
 # 📖 Overview
 
-Heart disease is one of the leading causes of death worldwide. Early prediction can help doctors and patients take preventive action.
+Heart disease remains one of the leading causes of death worldwide. Early prediction of cardiovascular risk can help individuals seek timely medical attention and support healthcare professionals in preliminary risk assessment.
 
-This project builds an **end-to-end Machine Learning pipeline** to predict the risk of heart disease using patient medical data.
+This project implements a **complete Machine Learning pipeline** that predicts the likelihood of heart disease based on clinical parameters. The trained model is deployed through a **Streamlit web application**, allowing users to enter medical information and receive instant predictions.
 
-The project covers:
+The project demonstrates the entire workflow from **data preprocessing** to **model deployment**, making it an excellent portfolio project for Machine Learning and Data Science.
 
-- 📊 Exploratory Data Analysis (EDA)
-- 🧹 Data Cleaning
-- ⚙ Feature Engineering
-- 🔄 Data Preprocessing
-- 🤖 Multiple Machine Learning Models
-- 📈 Performance Comparison
+---
+
+# ✨ Features
+
+- ❤️ Heart Disease Risk Prediction
+- 📊 Interactive Streamlit Dashboard
+- 🤖 Machine Learning Classification
+- 📈 Exploratory Data Analysis (EDA)
+- 🧹 Data Cleaning & Preprocessing
+- ⚙️ Feature Scaling
+- 🔄 One-Hot Encoding
+- 📋 Multiple Model Comparison
 - 💾 Model Serialization using Joblib
-- 🚀 Future Streamlit Deployment
+- ⚡ Real-Time Prediction
 
 ---
 
-# 🎯 Objectives
-
-- Analyze heart disease data.
-- Clean missing and inconsistent values.
-- Engineer meaningful features.
-- Compare multiple ML classification algorithms.
-- Select the best-performing model.
-- Save the trained model for deployment.
-- Build a Streamlit web application (future work).
-
----
-
-# 📂 Repository Structure
+# 📂 Project Structure
 
 ```text
 Heart-Disease-Risk-Prediction/
 │
+├── app.py
 ├── heart.py
 ├── heart.csv
 ├── knn_model.pkl
 ├── scaler.pkl
 ├── columns.pkl
-├── README.md
-└── app.py              (Coming Soon)
+├── requirements.txt
+└── README.md
 ```
 
 ---
 
-# 📊 Dataset Features
+# 📊 Dataset
 
-The dataset contains patient health information such as:
+The dataset contains patient medical information used for predicting heart disease.
+
+## Features
 
 - Age
 - Sex
@@ -67,9 +65,9 @@ The dataset contains patient health information such as:
 - Resting Blood Pressure
 - Cholesterol
 - Fasting Blood Sugar
-- ECG Results
+- Resting ECG
 - Maximum Heart Rate
-- Exercise Angina
+- Exercise-Induced Angina
 - Oldpeak
 - ST Slope
 
@@ -78,130 +76,96 @@ The dataset contains patient health information such as:
 ```text
 HeartDisease
 
-0 → No Heart Disease
+0 → Low Risk
 
-1 → Heart Disease
+1 → High Risk
 ```
 
 ---
 
-# 📊 Exploratory Data Analysis
+# 📈 Exploratory Data Analysis
 
-The project performs several visualization techniques:
+The project performs comprehensive EDA including:
 
-✅ Distribution Plots
-
-- Age
-- Resting Blood Pressure
-- Cholesterol
-- Maximum Heart Rate
-
-✅ Count Plots
-
-- Gender
-- Chest Pain Type
-- Fasting Blood Sugar
-
-✅ Box Plot
-
-Cholesterol vs Heart Disease
-
-✅ Violin Plot
-
-Age Distribution
-
-✅ Correlation Heatmap
-
-Relationship between numerical features
+- Distribution Plots
+- Count Plots
+- Box Plots
+- Violin Plots
+- Correlation Heatmaps
+- Class Distribution Analysis
 
 ---
 
-# 🧹 Data Cleaning
+# 🧹 Data Preprocessing
 
 The preprocessing pipeline includes:
 
-### Missing Value Handling
-
-Invalid values such as
-
-```
-RestingBP = 0
-
-Cholesterol = 0
-```
-
-are replaced using the mean of valid observations.
-
----
-
-### One-Hot Encoding
-
-Categorical variables are converted into numerical features using:
-
-```python
-pd.get_dummies()
-```
-
----
-
-### Feature Scaling
-
-Numerical features are standardized using:
-
-```python
-StandardScaler
-```
+- Duplicate Checking
+- Invalid Value Handling
+- Mean Imputation for Incorrect Values
+- One-Hot Encoding
+- Feature Scaling using StandardScaler
 
 ---
 
 # 🤖 Machine Learning Models
 
-Five different classification algorithms are trained and compared.
+The following algorithms were trained and evaluated:
 
-| Model | Purpose |
-|--------|----------|
-| Logistic Regression | Baseline Model |
-| Gaussian Naive Bayes | Probabilistic Classification |
-| Decision Tree | Tree-Based Learning |
-| Support Vector Machine (SVM) | Margin-Based Classification |
-| K-Nearest Neighbors (KNN) | Distance-Based Classification |
+| Model | Description |
+|--------|-------------|
+| Logistic Regression | Linear Classification |
+| Gaussian Naive Bayes | Probabilistic Classifier |
+| Decision Tree | Tree-Based Model |
+| Support Vector Machine | Margin-Based Classifier |
+| K-Nearest Neighbors | Distance-Based Classifier |
+
+After evaluation, **K-Nearest Neighbors (KNN)** was selected as the deployment model.
 
 ---
 
-# 📈 Model Evaluation
+# 📊 Evaluation Metrics
 
-Each model is evaluated using:
+The models are compared using:
 
 - Accuracy Score
 - F1 Score
 - Classification Report
 
-The best-performing model is selected for deployment.
+This helps identify the most suitable model for deployment.
 
 ---
 
-# 💾 Model Serialization
+# 🌐 Streamlit Application
 
-The trained model is saved using Joblib.
+The web application allows users to enter patient details and receive a prediction in real time.
 
-Generated Files:
+### User Inputs
 
-```text
-knn_model.pkl
+- Age
+- Sex
+- Chest Pain Type
+- Resting Blood Pressure
+- Cholesterol
+- Fasting Blood Sugar
+- Resting ECG
+- Maximum Heart Rate
+- Exercise-Induced Angina
+- Oldpeak
+- ST Slope
 
-scaler.pkl
+### Prediction Output
 
-columns.pkl
-```
+🟢 Low Risk of Heart Disease
 
-These files are later used by the Streamlit application for making predictions.
+🔴 High Risk of Heart Disease
 
 ---
-
 
 # 🛠 Technologies Used
 
 - Python
+- Streamlit
 - NumPy
 - Pandas
 - Matplotlib
@@ -211,20 +175,7 @@ These files are later used by the Streamlit application for making predictions.
 
 ---
 
-# 📦 Python Libraries
-
-```python
-numpy
-pandas
-matplotlib
-seaborn
-scikit-learn
-joblib
-```
-
----
-
-# 🚀 Installation
+# 📦 Installation
 
 Clone the repository
 
@@ -241,64 +192,100 @@ cd Heart-Disease-Risk-Prediction
 Install dependencies
 
 ```bash
-pip install numpy pandas matplotlib seaborn scikit-learn joblib
+pip install -r requirements.txt
 ```
 
-Run the training script
+or
 
 ```bash
-python heart.py
+pip install streamlit pandas numpy matplotlib seaborn scikit-learn joblib
 ```
 
 ---
 
-# 🔄 Machine Learning Workflow
+# ▶️ Run the Application
+
+```bash
+streamlit run app.py
+```
+
+---
+
+# 🔄 Workflow
 
 ```text
 Heart Disease Dataset
-         │
-         ▼
+        │
+        ▼
 Exploratory Data Analysis
-         │
-         ▼
+        │
+        ▼
 Data Cleaning
-         │
-         ▼
-Feature Encoding
-         │
-         ▼
+        │
+        ▼
+Feature Engineering
+        │
+        ▼
+One-Hot Encoding
+        │
+        ▼
 Feature Scaling
-         │
-         ▼
+        │
+        ▼
 Train-Test Split
-         │
-         ▼
-Train Multiple Models
-         │
-         ▼
+        │
+        ▼
+Model Training
+        │
+        ▼
 Model Comparison
-         │
-         ▼
-Save Best Model
-         │
-         ▼
-Future Streamlit Deployment
+        │
+        ▼
+KNN Model Selection
+        │
+        ▼
+Model Serialization
+        │
+        ▼
+Streamlit Web Application
+        │
+        ▼
+Heart Disease Prediction
 ```
 
 ---
 
-# 📚 Concepts Covered
+# 📚 Skills Demonstrated
 
 - Exploratory Data Analysis (EDA)
 - Data Cleaning
+- Data Visualization
 - Feature Engineering
 - One-Hot Encoding
 - Feature Scaling
 - Machine Learning Classification
-- Model Comparison
-- Performance Evaluation
+- Model Evaluation
 - Model Serialization
-- Deployment Preparation
+- Streamlit Deployment
+
+---
+
+# 🚀 Future Improvements
+
+- Hyperparameter Tuning
+- Cross Validation
+- ROC-AUC Comparison
+- SHAP Explainability
+- Docker Deployment
+- Cloud Deployment (Streamlit Community Cloud / Render)
+- User Authentication
+- Prediction History
+
+---
+
+# 📜 Disclaimer
+
+> This application is intended for educational purposes only and should not be used as a substitute for professional medical advice or diagnosis.
 
 ---
 
@@ -306,23 +293,23 @@ Future Streamlit Deployment
 
 **Ayushmaan Gupta**
 
-🎓 B.Tech CSE (AI & ML)
+🎓 B.Tech CSE (Artificial Intelligence & Machine Learning)
 
-### Interests
+**Interests**
 
 - Artificial Intelligence
 - Machine Learning
 - Healthcare AI
-- Computer Vision
 - Data Science
+- Computer Vision
 
 ---
 
 # ⭐ Support
 
-If you found this project useful,
+If you found this project useful:
 
-⭐ Star this repository
+⭐ Star the repository
 
 🍴 Fork the repository
 
@@ -330,16 +317,10 @@ If you found this project useful,
 
 ---
 
-> **⚠️ Disclaimer**
->
-> This project is intended for educational and research purposes only. It is **not** a substitute for professional medical advice, diagnosis, or treatment.
-
----
-
 <div align="center">
 
-**Made with ❤️ by Ayushmaan Gupta**
+### ❤️ Built with Python, Machine Learning & Streamlit
 
-*"AI cannot replace doctors, but it can empower them with faster and smarter predictions."*
+*"Machine Learning can support healthcare by providing intelligent insights, but medical decisions should always be made by qualified professionals."*
 
 </div>
